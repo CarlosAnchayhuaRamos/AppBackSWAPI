@@ -26,7 +26,7 @@ class SwapiService{
 
     const select ="SELECT * from prueba;";
 
-    const [data] = await sequelize.query(select);
+    const [[data]] = await sequelize.query(select);
     //const data = "hola mundo";
     console.log(data);
     return data;

@@ -8,14 +8,11 @@ var URI;
 if(config.dbUrl){
   URI = config.dbUrl;
 }else{
-  URI = `mysql://${USER}:${PASSWORD}@${config.dbHost}/${config.dbName}?ssl=true`;
+  URI = `mysql://${USER}:${PASSWORD}@${config.dbHost}/${config.dbName}`;
 }
 const sequelize = new Sequelize(URI, {
   dialect: 'mysql',
-  logging: true,
-  ssl: {
-    rejectUnauthorized: true
-  }
+  dialectOptions: { ssl: {} }
 });
 
 module.exports = sequelize;
