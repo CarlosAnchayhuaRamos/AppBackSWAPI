@@ -20,8 +20,9 @@
     "serverless-offline": "^11.3.0"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "mysql2": "^2.3.3",
-    "node-fetch": "^3.3.0",
+    "node-fetch": "^2.6.1",
     "querystring": "^0.2.1",
     "sequelize": "^6.25.5"
   }
