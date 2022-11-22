@@ -45,7 +45,7 @@ functions:
     events:
       - http:
           method: GET
-          path: user/personas
+          path: user/personas/{id}
   createUser:
     handler: handler.createUser
     events:

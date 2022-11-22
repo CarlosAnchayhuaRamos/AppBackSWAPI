@@ -41,12 +41,13 @@ module.exports.helloUser = async (event) => {
 
 module.exports.createUser = async (event) => {
   const body = querystring.parse(event["body"])
+  const data = await swapiService.createPeople(body);
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'petición para crear usuarios',
-        input: 'hola ' + body.user,
+        message: 'se agregó personaje',
+        input: 'hola ' + data,
       },
       null,
       2
@@ -55,7 +56,7 @@ module.exports.createUser = async (event) => {
 };
 
 module.exports.obtenerData = async (event) => {
-  const data = await swapiService.findAll();
+  const data = await swapiService.findAll(event.pathParameters.id);
   return {
     statusCode: 200,
     body: JSON.stringify(
